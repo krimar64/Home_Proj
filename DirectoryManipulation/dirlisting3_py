@@ -1,0 +1,12 @@
+import os
+
+# prints all files and folders in a pre defined text file
+file = open('dir_listing.txt','w')
+target = r'c:\\Python_Home\\DirectoryManipulation'
+folder_path = r'C:\Users\ekrrmai\OneDrive - Ericsson\Ericsson\Python_Home'
+
+for root, dirname, files in os.walk(folder_path):
+    for x in (files):
+        print(root + '\\'  + x)
+        file.write(root + '\\'  + x + '\n')
+file.close()

@@ -1,0 +1,54 @@
+
+def add(num1,num2):
+    """Returns num1 plus num2"""
+    return num1 + num2
+
+def sub(num1,num2):
+    """Returns num1 minus num2"""
+    return num1 - num2
+def mul(num1,num2):
+    """Returns num1 multiplied with num2"""
+    return num1 * num2
+def div(num1,num2):
+    """Returns num1 divided with num2"""
+    return num1 / num2
+
+def main():
+    """Allows user to run basic calculator"""
+    user_continue = True
+    while user_continue:
+        validInput=False
+        while not validInput:
+            try:
+                num1 = int(input("Enter number 1: "))
+                num2 = int(input("Enter number 2: "))
+                operation=int(input("What operation? 1:add, 2:subtract, 3:multiply, 4:divide? "))
+                validInput = True
+            except:
+                print("Invalid input, try again: ")
+                #"No need to exit code" # return #because an error
+        #Determine operation
+        if operation == 1:
+            print("Adding..")
+            print(add(num1,num2))
+        elif operation == 2:
+            print("Subtracting..")
+            print(sub(num1,num2))
+        elif operation == 3:
+            print("Multiplying..")
+            print(mul(num1,num2))
+        elif operation == 4:
+            print("Dividing..")
+            print(div(num1,num2))
+        else:
+            print("I don't understand")
+
+        # Ask user to continue or stop
+        continue_yn=input("Do you want to continue? Press 'y' for Yes or any other character to exit ")
+        if continue_yn != 'y':
+            user_continue = False
+            break # breaks out of the current loop, not both loops
+        else:
+            continue # Restarts the loop
+
+main()
